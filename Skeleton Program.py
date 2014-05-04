@@ -229,11 +229,15 @@ def DisplayRecentScores(RecentScores):
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
     if RecentScores[Count].Date != None:
       ScoreDate = RecentScores[Count].Date.strftime("%d/%m/%Y")
+    else:
+      ScoreDate = "N/A"
     print("{0:<12}{1:<10}{2:<5}".format(ScoreDate,RecentScores[Count].Name,RecentScores[Count].Score))
   print()
   print('Press the Enter key to return to the main menu')
   input()
   print()
+
+#-----------------------------------------------------------------#
 
 def BubbleSortScores(RecentScores):
   Sorted = True
@@ -244,8 +248,8 @@ def BubbleSortScores(RecentScores):
         hold = RecentScores[count+1]
         RecentScores[count+1] = RecentScores[count]
         RecentScores[count] = hold
-      else:
-        Sorted = True
+
+#-----------------------------------------------------------------#
   
 def UpdateRecentScores(RecentScores, Score):
   valid = False
