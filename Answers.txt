@@ -1,0 +1,121 @@
+##COMP_2014 Answers:
+
+
+
+##Task Sheet 1
+
+##Question 3A:
+
+#1. GetPlayerName()
+
+#2. Insert a while loop into the function, so it makes sure you have inputed there name.
+
+#3. A vaild variable will need to be added and it will be a boolean datatype.
+
+
+#Pseudo-code:
+
+
+FUNCTION GetPlayerName()
+
+	OUTPUT("")
+
+	vaild = Boolean
+	vaild <- False
+	WHILE vaild == False:
+
+		INPUT PlayerName <- ("Please enter your name: ")
+
+		IF PlayerName == "":
+
+			OUTPUT ("Please enter something for your name...")
+		ELSE:
+
+			vaild <- True
+
+
+		END IF
+
+	END WHILE
+
+	OUTPUT ("")
+
+
+
+##Question 3B:
+
+#1. UpdateRecentScores()
+
+
+
+##Question 5:
+
+#1. datetime
+
+#2. DisplayRecentScores(), UpdateRecentScore(), ResetRecentScores(), TRecentScore()
+
+#3. .strptime
+
+
+
+#1. Fixed Value - A variable of which is not changed during the time the program is run.
+
+    Stepper - A variable of which steps through a systematic value change.
+
+    Most Recent holder - A variable of which holds the lastest value encounted when processing values or an input.
+
+    Most wanted holder - A variable of which holds the value needed, for example the largest number.
+
+    Gatherer - A variable of which keeps an accumulating effect, for example running total of values added.
+
+    Transformation - A variable of which gets a new value from a calculation.
+
+    Follower - A variable of which before updating a variable its current value is copied to the follower.
+
+    Temporary - A variable of which holds some value for a short time only.
+
+
+
+#2. Passing by value means, that when you pass a variable, which is a interger for example, into a function you pass a stored copy of that variable so unless you return that variable back out, the origional variable will stay the same.
+
+    On the other hand if your'e passing by reference you will make changes to the origional and you will not need to return it after wards.
+
+
+
+#3. GetRank()
+
+	-RankNo... By Value
+
+    GetSuit()
+
+	-SuitNo... By Value
+
+    LoadDeck()
+
+	-Deck... By reference
+
+    Displaycard()
+
+	-ThisCard... By Reference
+
+    GetCard()
+
+	-NoOfCardsTurnedOver... By Value
+
+    IsCardHigher()
+
+	-LastCard... By Value -NextCard... By value
+
+    DisplayEndOfGameMessage()
+
+	-Score... By Value
+
+    def ResetRecentScores()
+
+	-RecentScores... By Reference
+
+##Task Sheet 2
+##Question 6:
+#1. Within in the Card function.
+#2. DisplayMenu()
+#3. GetRank()
