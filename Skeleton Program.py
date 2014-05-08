@@ -77,6 +77,7 @@ def DisplayMenu():
   print('3. Display recent scores')
   print('4. Reset recent scores')
   print('5. Options')
+  print('6. Save high scores')
   print()
   print('Select an option from the menu (or enter q to quit): ', end='')
 
@@ -85,7 +86,7 @@ def GetMenuChoice():
   print()
   return Choice.lower()[0]
 
-#--------------------------------------------------#
+#--------ACE HIGH OR LOW----------------------------#
 
 def OptionsMainMenu():
   DisplayOptions()
@@ -171,7 +172,7 @@ def GetCard(ThisCard, Deck, NoOfCardsTurnedOver):
   Deck[52 - NoOfCardsTurnedOver].Suit = 0
   Deck[52 - NoOfCardsTurnedOver].Rank = 0
 
-#------------------------------------------------#
+#--------ACE HIGH OR LOW------------------------#
 
 def IsNextCardHigher(LastCard, NextCard):
   Higher = False
@@ -237,17 +238,28 @@ def DisplayRecentScores(RecentScores):
   input()
   print()
 
-#-----------------------------------------------------------------#
+#--------BUBBLE SORT----------------------------------------------#
 
 def BubbleSortScores(RecentScores):
   Sorted = True
   while Sorted:
     for count in range(1,NO_OF_RECENT_SCORES):
       Sorted = False
-      if RecentScores[count].Score > RecentScores[count+1].Score:
+      if RecentScores[count].Score < RecentScores[count+1].Score:
         hold = RecentScores[count+1]
         RecentScores[count+1] = RecentScores[count]
         RecentScores[count] = hold
+      else:
+        Sorted = True
+
+#-----------------------------------------------------------------#
+
+#--------SAVE GAME------------------------------------------------#
+
+def SaveScores(RecentScores):
+  with open("save_scores.txt", mode='w', encoding='utf-8') as High_Scores:
+    for Score in RecentScores:
+      High_Scores.write(Score+"\n")
 
 #-----------------------------------------------------------------#
   
@@ -329,4 +341,6 @@ if __name__ == '__main__':
       ResetRecentScores(RecentScores)
     elif Choice == '5':
       OptionsMainMenu()
+    elif Choice == '6':
+      SaveScores(RecentScores)
 
